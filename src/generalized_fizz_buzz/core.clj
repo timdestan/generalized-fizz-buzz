@@ -22,3 +22,7 @@
 ;; Generates a sequence from 1 to n, modified based on factors.
 (defn fizz-buzz [n factors]
   (map (fn [n'] (number-or-word n' factors)) (one-to n)))
+
+;; Print out the results up to 100.
+(defn -main []
+  (doall (map println (fizz-buzz 100 {3 "Fizz" 5 "Buzz" 7 "Baz"}))))
