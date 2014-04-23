@@ -10,11 +10,9 @@
 ;; Finds words that are associated with a multiple
 ;; of n in the factors.
 (defn words-for-multiples [n factors]
-  (for [factor factors
-              :let [n' (key factor)
-                    word (val factor)]
-              :when (divides n' n)]
-          word))
+  (for [[n' word] factors
+        :when (divides n' n)]
+    word))
 
 ;; Generates the word or number for n given the provided factors.
 (defn number-or-word [n factors]
